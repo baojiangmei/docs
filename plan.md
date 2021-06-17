@@ -15,5 +15,5 @@
 |   4:00pm-5:00pm    |    11:00pm-12:00pm   |     this is only a long time we can use,  talk share,help me practis my english      |
 
 
-### I dont work at sunday and saturday, maybe I have time to teach you chinese。if you like ,we can use wechat's voice function，ｏｒ　Video function。
+### I dont work at sunday and saturday, maybe I have time to teach you chinese。if you like ,we can use wechat's voice function，or　Video function。
 
