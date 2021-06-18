@@ -15,7 +15,8 @@ npm install cnpm -g
   <div id="app">
     <div v-on:click="handler">事件绑定事例</div>
     <div @click="handler">事件绑定事例</div>
-    <input type="text" v-model=""/>
+    <input type="text" v-model="value"/>
+    <p>value的值是 {{value}} </p>
   </div>
   <script src="js/vue.js"></script>
   <script>
