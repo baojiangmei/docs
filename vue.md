@@ -18,7 +18,7 @@ npm install cnpm -g
     </div>
     <script>
       new Vue({
-       el: 'app',
+       el: '#app',
        data: {
          msg: "hello world"
        },
@@ -47,7 +47,7 @@ npm install cnpm -g
   <script src="js/vue.js"></script>
   <script>
       const vm = new Vue({
-        el: 'app',
+        el: '#app',
         data: {
           value: ''
           }
@@ -66,7 +66,7 @@ npm install cnpm -g
  </div> 
  <script>
     const vm = new Vue({
-        el: 'app',
+        el: '#app',
         data: {
           value: ''
         }
@@ -86,7 +86,7 @@ npm install cnpm -g
  </div>
  <script>
    new Vue({
-     el: 'app',
+     el: '#app',
      data: {
        firstname: "",
        lastname: ""
@@ -112,7 +112,7 @@ npm install cnpm -g
  </div>
  <script>
    new Vue(
-      el: 'app',
+      el: '#app',
       data: {
         firstname: "",
         secondname:"",
@@ -145,7 +145,7 @@ if是通过添加dom和删除dom实现显隐，show是通过给标签添加隐�
    </div>
   <script>
     new Vue(
-      el: 'app',
+      el: '#app',
       data: {
           msg: '',
           flag: false
@@ -166,7 +166,7 @@ if是通过添加dom和删除dom实现显隐，show是通过给标签添加隐�
   </div>
   <script>
       new Vue(
-          el: 'app',
+          el: '#app',
           data: {
             msg: "Hello World",
             list: [1,2,3,4]
@@ -176,4 +176,66 @@ if是通过添加dom和删除dom实现显隐，show是通过给标签添加隐�
 </body>
 ```
 
+# to_do list
 
+```html
+  <body>
+    <div id="app">
+      <input v-model='task'/>
+      <ul>
+        <li v-for= "(item,index) in list" :kay="index">{{item}}</li>
+      </ul>
+    </div>
+    
+    <script>
+      new Vue(
+        el: "#app",
+        data: {
+          task: "",  
+        },
+        method: {
+          onSubmit: function(){
+             if(this.task == ''){
+                return;
+             }
+             this
+          }
+        }
+      )
+    </script>  
+  </body> 
+```
+
+#  组件，全局组件与局部组件，父组件向子组件传值
+```html
+<body>
+  <div id="app">
+    <ul>
+      <todo-item2 v-for="(item,index) in tasklist" :key="index" :item="item"></todo-item2>
+    </ul>
+  </div>
+  <script>
+    Vue.component(
+      'todo-item,{
+        props: ['item'],
+        template：'<li>{{item}}</li>'
+      }  
+    );
+    var localItemComponent = {
+      props: ['item'],
+      template: '<li>{{item}}</li>'
+    }
+    
+    new Vue({
+      el: "#app",
+      components:{
+         toto-item2: localItemComponent 
+      },
+      data:{
+        tasklist: ['1','2','3','4']
+      }
+      }
+    )
+  </script>
+</body>
+```
