@@ -243,7 +243,10 @@ if是通过添加dom和删除dom实现显隐，show是通过给标签添加隐�
 ```html
   <body>
     <div id="app">
-      <div>  </div>
+      <div> 
+        <input type='text' v-focus/>
+        <div v-color='msg'></div>
+      </div>
     </div>
     <script>
       Vue.directive('focus',{
