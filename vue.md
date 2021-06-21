@@ -239,3 +239,32 @@ if是通过添加dom和删除dom实现显隐，show是通过给标签添加隐�
   </script>
 </body>
 ```
+# 钩子函数
+```html
+  <body>
+    <div id="app">
+      <div>  </div>
+    </div>
+    <script>
+      Vue.directive('focus',{
+        inserted(el){
+          el.focus()
+        }
+      }
+      ),
+      Vue.directive('color',{
+        inserted(el,binding){
+             el.style.backgroundColor = binding.value.color;
+        }
+      }   
+      ),
+      var vm = new Vue({
+          el:"#app",
+          data:{
+             color:'blue'
+          }
+      }
+      )
+    </script>
+  </body>
+```
