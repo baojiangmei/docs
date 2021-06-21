@@ -108,7 +108,7 @@ npm install cnpm -g
  <div id="app">
   <input v-model="firstname"/>
   <input v-model="secondname"/>
-  <div></div>
+  <div>{{count}}</div>
  </div>
  <script>
    new Vue(
@@ -131,7 +131,49 @@ npm install cnpm -g
 </body>
 ```
 
+#  v-if、v-show、v-for
+v-if 控制标签及其内容的显示和不显示
+v-show 控制标签及其内容的显示和隐藏
+if是通过添加dom和删除dom实现显隐，show是通过给标签添加隐藏属性显隐。if会删除标签show不会
 
+```html
+<body>
+  <div id='app'>
+  <div v-if='flag'>
+    {{msg}}
+  </div>
+   </div>
+  <script>
+    new Vue(
+      el: 'app',
+      data: {
+          msg: '',
+          flag: false
+      }
+      
+    )
+  </script>
+</body>
+```
+# v-for
 
+```html
+<body>
+  <div id='app'>
+      <ul>
+        <li v-for="(item,index) in list" :key="index">{{item}}_索引：{{index}}</li>
+      </ul>
+  </div>
+  <script>
+      new Vue(
+          el: 'app',
+          data: {
+            msg: "Hello World",
+            list: [1,2,3,4]
+          }
+      )
+  </script>
+</body>
+```
 
 
